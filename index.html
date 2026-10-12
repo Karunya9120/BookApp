@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookApp</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #F8F3FF;
+            color: #59318D;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 25px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 650px;
+            text-align: center;
+        }
+
+        .book-picture {
+            font-size: 75px;
+            margin-bottom: 10px;
+        }
+
+        h1 {
+            font-size: 38px;
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            color: #776985;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        h2 {
+            font-size: 21px;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #E3D4F5;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: left;
+            margin: 18px 0;
+            box-shadow: 0 6px 18px #59318D0D;
+        }
+
+        .card h3 {
+            font-size: 21px;
+            margin: 0 0 12px;
+        }
+
+        .card p {
+            color: #776985;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .reader-button {
+            background: #7545B5;
+            color: white;
+            border: none;
+        }
+
+        .author-button {
+            background: white;
+            color: #7545B5;
+            border: 1px solid #7545B5;
+        }
+
+        button:hover {
+            opacity: 0.85;
+        }
+
+        .footer {
+            color: #9385A2;
+            font-size: 13px;
+            margin-top: 25px;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="book-picture">📚🌷</div>
+
+        <h1>Welcome to BookApp</h1>
+
+        <p class="subtitle">
+            Find your next favourite story, or introduce
+            your book to the world.
+        </p>
+
+        <h2>What would you like to do?</h2>
+
+        <div class="card">
+            <h3>🔎 Find a Book</h3>
+
+            <p>
+                Tell us what kind of story you want to read.
+                We'll help you discover books that match
+                your interests.
+            </p>
+<button class="reader-button" type="button"
+    onclick="window.location.href='reader.html'">
+    Find My Book →
+</button>
+        </div>
+
+        <div class="card">
+            <h3>✍️ Advertise Your Book</h3>
+
+            <p>
+                Are you an author? Introduce your book
+                and help readers discover your story.
+            </p>
+
+<button class="author-button" type="button"
+    onclick="window.location.href='author.html'">
+    Promote My Book →
+</button>
+
+        </div>
+
+        <p class="footer">
+            Every reader has a story to find. Every author
+            has a story to share. 💜
+        </p>
+
+    </div>
+
+</body>
+</html>

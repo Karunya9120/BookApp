@@ -1,0 +1,351 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Find Your Book | BookApp</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Georgia, serif;
+            background: linear-gradient(
+                135deg,
+                #F9F3FF,
+                #EDE0FF,
+                #FDF5FF
+            );
+            color: #583582;
+            min-height: 100vh;
+            padding: 30px 18px;
+        }
+
+        .container {
+            max-width: 750px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-block;
+            color: #7545B5;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+            margin-bottom: 20px;
+        }
+
+        .back-link:hover {
+            color: #A45DEB;
+        }
+
+        .decoration {
+            font-size: 45px;
+            margin: 10px;
+        }
+
+        h1 {
+            font-size: clamp(30px, 6vw, 43px);
+            margin: 10px 0;
+        }
+
+        .subtitle {
+            color: #806B96;
+            font-family: Arial, sans-serif;
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+        .quote {
+            background: #E8D8FF;
+            border-left: 5px solid #9561D5;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 28px 0;
+            font-style: italic;
+            line-height: 1.8;
+            color: #65418D;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.92);
+            border: 1px solid #E2D0F7;
+            border-radius: 24px;
+            padding: 28px;
+            margin: 22px 0;
+            text-align: left;
+            box-shadow: 0 8px 25px rgba(101, 65, 141, 0.10);
+        }
+
+        .card h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 0;
+        }
+
+        .helper {
+            color: #806B96;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+        label {
+            display: block;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+            margin: 22px 0 10px;
+            color: #65418D;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 145px;
+            padding: 16px;
+            border: 2px solid #E1CFF8;
+            border-radius: 15px;
+            background: #FCF9FF;
+            font-family: Arial, sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: #583582;
+            resize: vertical;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        textarea:focus {
+            border-color: #9561D5;
+            box-shadow: 0 0 0 4px #9561D522;
+        }
+
+        textarea::placeholder {
+            color: #AB9ABF;
+        }
+
+        
+
+        .tag {
+            background: #F0E5FF;
+            border: 1px solid #DFCCF8;
+            border-radius: 30px;
+            padding: 9px 13px;
+            color: #7045A5;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+        }
+
+        .find-button {
+            display: block;
+            width: 100%;
+            margin-top: 23px;
+            padding: 15px;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(90deg, #8652C5, #A16BDE);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .find-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 18px #8652C544;
+        }
+
+        .bottom-quote {
+            margin: 32px 0 15px;
+            color: #806B96;
+            font-style: italic;
+            line-height: 1.8;
+        }
+
+        .footer {
+            font-family: Arial, sans-serif;
+            font-size: 12px;
+            color: #A090B3;
+            padding: 15px;
+        }
+       
+
+        @media (max-width: 480px) {
+            .card {
+                padding: 20px;
+            }
+
+            .decoration {
+                font-size: 35px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <a class="back-link" href="index.html">
+            ← Back to Home
+        </a>
+
+        <div class="decoration">📚 🌷 🦋</div>
+
+        <h1>Find Your Perfect Book</h1>
+
+        <p class="subtitle">
+            A little magic, a little imagination, and a story
+            that feels like it was written just for you. 💜
+        </p>
+
+        <div class="quote">
+            "Some books find you exactly when your heart
+            needs them the most." ✨
+        </div>
+
+        <div class="card">
+
+            <h2>🌸 Tell Us Your Story Mood 🌸</h2>
+
+            <p class="helper">
+                Don't know which book to pick? Tell us what
+                you love, what you feel, and what kind of
+                story you wish to escape into.
+            </p>
+
+            <label for="bookDescription">
+                💌 What would you love to read?
+            </label>
+
+            <textarea
+                id="bookDescription"
+                placeholder="Example: I want a heartwarming romance with emotional characters, beautiful friendships, a little drama, and a happy ending..."
+            ></textarea>
+
+
+<button class="find-button" type="button"
+    onclick="findBooks()">
+    Find My Book ✨
+</button>
+
+       
+        <div id="bookResults"></div>
+         </div>
+
+        <div class="quote">
+            📖 Every reader has a different heart.
+            Every story has a different kind of magic.
+        </div>
+
+        <div class="decoration">🧸 ☕ 💜</div>
+
+        <p class="bottom-quote">
+            "Get lost in a book. Find a little more of yourself."
+        </p>
+
+        <p class="footer">
+            Made with love for book lovers everywhere ♡
+            <br>
+            BookApp © 2026
+        </p>
+
+    </div>
+    <script>
+
+
+function findBooks() {
+    const books = JSON.parse(localStorage.getItem("books")) || [];
+
+    const request = document
+        .getElementById("bookDescription")
+        .value.toLowerCase()
+        .trim();
+
+    const results = document.getElementById("bookResults");
+
+    if (request === "") {
+        results.innerHTML = "Please describe the story you want! 💜";
+        return;
+    }
+
+    const stopWords = [
+        "the", "a", "an", "i", "want", "with", "and",
+        "or", "is", "are", "of", "to", "about", "for",
+        "in", "on", "that", "it", "me", "my", "story",
+        "book", "girl", "boy"
+    ];
+
+    const keywords = [...new Set(
+        request.match(/[a-z0-9]+/g) || []
+    )].filter(word =>
+        word.length > 1 && !stopWords.includes(word)
+    );
+
+    if (keywords.length === 0) {
+        results.innerHTML = "Please describe the kind of book you want! 📚";
+        return;
+    }
+
+    const rankedBooks = books.map(function(book) {
+        const details = [
+            book.title,
+            book.genre,
+            book.themes,
+            book.description
+        ].join(" ").toLowerCase();
+
+        let matchedWords = 0;
+
+        keywords.forEach(function(word) {
+            if (details.includes(word)) {
+                matchedWords++;
+            }
+        });
+
+        const percentage = Math.round(
+            (matchedWords / keywords.length) * 100
+        );
+
+        return {
+            ...book,
+            percentage: percentage
+        };
+    });
+
+    rankedBooks.sort(function(a, b) {
+        return b.percentage - a.percentage;
+    });
+
+    results.innerHTML = "";
+
+    rankedBooks.forEach(function(book) {
+        results.innerHTML += `
+            <div class="book-card">
+                <h3>📖 ${book.title}</h3>
+                <p><b>Author:</b> ${book.author}</p>
+                <p><b>Genre:</b> ${book.genre}</p>
+                <p><b>Themes:</b> ${book.themes}</p>
+                <p>${book.description}</p>
+                <h3>💜 ${book.percentage}% Match</h3>
+                ${
+                    book.bookLink
+                    ? `<p><a href="${book.bookLink}" target="_blank"
+                         rel="noopener noreferrer">View Book</a></p>`
+                    : ""
+                }
+            </div>
+        `;
+    });
+}
+
+
+</script>
+
+</body>
+</html>

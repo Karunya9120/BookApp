@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Share Your Book | BookApp</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 30px 18px;
+            font-family: Georgia, serif;
+            background: linear-gradient(135deg, #F9F3FF, #EDE0FF);
+            color: #583582;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .intro {
+            text-align: center;
+            color: #806B96;
+            line-height: 1.7;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border: 1px solid #E2D0F7;
+            border-radius: 22px;
+            box-shadow: 0 8px 25px #65418D18;
+            margin-top: 25px;
+        }
+
+        label {
+            display: block;
+            margin: 15px 0 8px;
+            font-family: Arial, sans-serif;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px;
+            border: 1px solid #D9C5F2;
+            border-radius: 10px;
+            background: #FCF9FF;
+            font-size: 15px;
+        }
+        
+.submit-button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 25px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #8652C5, #A16BDE);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px #8652C544;
+}
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Share Your Story 📚💜</h1>
+
+        <p class="intro">
+            Every author has a story worth discovering.
+            <br>
+            Help readers find the book they are looking for. 🌷
+        </p>
+
+       
+<div class="card">
+
+    <h2>✨ Introduce Your Book</h2>
+
+    <label for="bookTitle">📖 Book Title</label>
+
+    <input
+        type="text"
+        id="bookTitle"
+        placeholder="Enter your book title"
+    >
+
+    <label for="authorName">✍️ Author Name</label>
+
+    <input
+        type="text"
+        id="authorName"
+        placeholder="Enter your name"
+    >
+    
+<label for="genre">🌸 Book Genre</label>
+
+<select id="genre">
+    <option value="">Choose a genre</option>
+    <option>Romance</option>
+    <option>Mystery / Thriller</option>
+    <option>Fantasy</option>
+    <option>Science Fiction</option>
+    <option>Literary Fiction</option>
+    <option>Self-Help</option>
+    <option>Other</option>
+</select>
+
+<label for="themes">💜 Main Themes</label>
+
+<input
+    type="text"
+    id="themes"
+    placeholder="e.g. love, friendship, healing"
+>
+
+<label for="description">📖 Short Book Description</label>
+
+<textarea
+    id="description"
+    rows="5"
+    placeholder="Tell readers what your story is about..."
+></textarea>
+
+<label for="bookLink">🔗 Book Link (Optional)</label>
+
+<input
+    type="url"
+    id="bookLink"
+    placeholder="https://..."
+>
+
+
+<button class="submit-button" type="button"
+    onclick="saveBook()">
+    Submit My Book 💜
+</button>
+
+
+</div>
+
+
+            
+            
+
+        </div>
+
+    </div>
+    
+
+<script>
+    function saveBook() {
+        alert("Your book submission button is working! 💜");
+    }
+    
+function saveBook() {
+    const title = document.getElementById("bookTitle").value;
+    const author = document.getElementById("authorName").value;
+    const genre = document.getElementById("genre").value;
+    const themes = document.getElementById("themes").value;
+    const description = document.getElementById("description").value;
+    const bookLink = document.getElementById("bookLink").value;
+
+    const book = {
+        title: title,
+        author: author,
+        genre: genre,
+        themes: themes,
+        description: description,
+        bookLink: bookLink
+    };
+
+    let books = JSON.parse(localStorage.getItem("books")) || [];
+
+    books.push(book);
+
+    localStorage.setItem("books", JSON.stringify(books));
+
+    alert("Your book has been saved! 💜📚");
+}
+
+</script>
+
+</body>
+</html>
